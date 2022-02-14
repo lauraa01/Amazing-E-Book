@@ -52,13 +52,13 @@ class RegisterController extends Controller
     {
 
         return Validator::make($data, [
-            'first_name' => ['required', 'string', 'max:25'],
-            'middle_name' => ['nullable','string','max:25'],
-            'last_name' => ['required', 'string', 'max:25'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:account'],
+            'first_name' => ['required', 'alpha', 'string', 'max:25'],
+            'middle_name' => ['nullable', 'alpha', 'string','max:25'],
+            'last_name' => ['required', 'alpha', 'string', 'max:25'],
+            'email' => ['required', 'alpha', 'string', 'email', 'max:255', 'unique:account'],
             'gender_id' => ['required'],
             'role_id' => ['required'],
-            'password' => ['required', 'string', 'regex:/^.*(?=.*?[a-zA-Z])(?=.*?[0-9]).{8,}$/', 'min:9'],
+            'password' => ['required', 'string', 'min:9', 'regex:/^(?=.*\d).+$/'],
             'display_picture_link' => ['required', 'mimes:jpeg,png,jpg'],
         ]);
 

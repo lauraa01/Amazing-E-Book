@@ -7,8 +7,8 @@
     <table class="table border table-striped table-hover mt-5" cellpadding="10" width="100%">
         <thead>
             <tr>
-                <td>Author</td>
-                <td>Title</td>
+                <td>{{ __('home.author') }}</td>
+                <td>{{ __('home.title') }}</td>
             </tr>
         </thead>
 

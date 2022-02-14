@@ -155,6 +155,8 @@ class HomeController extends Controller
 
         Request()->session()->regenerateToken();
 
+        Request()->session()->flush();
+
         return view('logout');
     }
 

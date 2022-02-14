@@ -10,19 +10,19 @@
 
     <table class="book-detail" cellpadding="20">
         <tr>
-            <td>Title: t {{$det->title}}</td>
+            <td>{{ __('home.title') }}:  {{$det->title}}</td>
         </tr>
         <tr>
-            <td>Author: {{$det->author}}</td>
+            <td>{{ __('home.author') }}: {{$det->author}}</td>
         </tr>
         <tr>
-            <td>Description: <br> {{$det->description}}</td>
+            <td>{{ __('home.description') }}: <br> {{$det->description}}</td>
         </tr>
     </table>
 
     <div class="add-to-cart">
         <a href="rent/{{ $det->ebook_id }}"class="btn btn-warning" style="margin-left: 80%; padding: 1% 3%;">
-            Rent
+            {{ __('home.rent') }}
         </a>
     </div>
 </div>

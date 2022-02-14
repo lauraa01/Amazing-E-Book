@@ -8,8 +8,8 @@
             <table class="table border">
                 <thead>
                     <tr>
-                        <td>Account</td>
-                        <td>Action</td>
+                        <td>{{ __('home.account') }}</td>
+                        <td>{{ __('home.action') }}</td>
                         <td></td>
                     </tr>
                 </thead>

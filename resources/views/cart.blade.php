@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-    <h5 class="mt-5">Title</h5>
+    <h5 class="mt-5">{{ __('home.title') }}</h5>
 
     <table class="table border table-striped table-hover" cellpadding="10">
         @forelse ($carts as $c)

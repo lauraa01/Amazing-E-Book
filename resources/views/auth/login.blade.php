@@ -24,7 +24,7 @@
         @csrf
         <table cellpadding="10">
             <tr>
-                <td><label for="email">{{ __('Email Address') }}:</label></td>
+                <td><label for="email">{{ __('profile.email address') }}:</label></td>
                 <td><input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus></td>
             </tr>
             @error('email')
@@ -38,7 +38,7 @@
             @enderror
 
             <tr>
-                <td><label for="password">{{ __('Password') }}:</label></td>
+                <td><label for="password">{{ __('profile.password') }}:</label></td>
                 <td><input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"></td>
             </tr>
             @error('password')
@@ -57,7 +57,7 @@
                         {{ __('Submit') }}
                     </button> <br>
                     <a href="register">
-                        Don't have an account? click here to sign up
+                        {{ __('home.sign up') }}
                     </a>
                 </td>
             </tr>

@@ -11,7 +11,7 @@
 
         <form action="/updaterole/{{ $data->id }}" class="container-fluid">
             <div class="row mb-3 form-group{{ $errors->has('role') ? ' has-error' : '' }}">
-                <label for="role_id">Role:</label>
+                <label for="role_id">{{ __('profile.role') }}: </label>
                 <select class="form-control" name="role_id">
                     <option value="1">User</option>
                     <option value="2">Admin</option>

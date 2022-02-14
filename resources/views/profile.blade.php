@@ -16,7 +16,7 @@
                     <div class="col">
                         <table cellpadding="10">
                             <tr>
-                                <td><label for="first_name">{{ __('First Name') }}</label></td>
+                                <td><label for="first_name">{{ __('profile.first name') }}</label></td>
                                 <td><input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ $p->first_name }}" required autocomplete="name" autofocus></td>
                             </tr>
                             @error('first_name')
@@ -30,7 +30,7 @@
                             @enderror
 
                             <tr>
-                                <td><label for="last_name">{{ __('Last Name') }}</label></td>
+                                <td><label for="last_name">{{ __('profile.last name') }}</label></td>
                                 <td><input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ $p->last_name }}" required autocomplete="name" autofocus></td>
                             </tr>
                             @error('last_name')
@@ -44,12 +44,12 @@
                             @enderror
 
                             <tr>
-                                <td><label for="gender_id">{{ __('Gender') }}</label></td>
+                                <td><label for="gender_id">{{ __('profile.gender') }}</label></td>
                                 <td>
                                     <input type="radio" id="male" name="gender_id" value="1" {{$p->gender_id == 1? 'checked' : ''}}>
-                                    <label for="male">Male</label>
+                                    <label for="male">{{ __('profile.gender male') }}</label>
                                     <input type="radio" id="female" name="gender_id" value="2" {{$p->gender_id == 2? 'checked' : ''}}>
-                                    <label for="female">Female</label>
+                                    <label for="female">{{ __('profile.gender female') }}</label>
                                 </td>
                             </tr>
                             @error('gender_id')
@@ -63,7 +63,7 @@
                             @enderror
 
                             <tr>
-                                <td><label for="password">{{ __('Password') }}</label></td>
+                                <td><label for="password">{{ __('profile.password') }}</label></td>
                                 <td><input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"></td>
                             </tr>
                             @error('password')
@@ -82,7 +82,7 @@
             <div class="col">
                 <table cellpadding="10">
                     <tr>
-                        <td><label for="middle_name">{{ __('Middle Name') }}</label></td>
+                        <td><label for="middle_name">{{ __('profile.middle name') }}</label></td>
                         <td><input id="middle_name" type="text" class="form-control" name="middle_name" value="{{ $p->middle_name }}"></td>
                     </tr>
                     @error('password')
@@ -96,7 +96,7 @@
                     @enderror
 
                     <tr>
-                        <td><label for="email">{{ __('Email Address') }}</label></td>
+                        <td><label for="email">{{ __('profile.email address') }}</label></td>
                         <td><input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $p->email }}" required autocomplete="email"></td>
                     </tr>
                     @error('email')
@@ -110,12 +110,12 @@
                     @enderror
 
                     <tr>
-                        <td><label for="role_id">Role</label></td>
+                        <td><label for="role_id">{{ __('profile.role') }}</label></td>
                         <td><input type="text" readonly value="{{ $p->role_desc }}" class="form-control"></td>
                     </tr>
 
                     <tr>
-                        <td><label for="display_picture_link">{{ __('Display Picture') }}</label></td>
+                        <td><label for="display_picture_link">{{ __('profile.display picture') }}</label></td>
                         <td><input type="file" name="display_picture_link" style="margin-left: 5%"></td>
                     </tr>
                     @error('display_picture_link')

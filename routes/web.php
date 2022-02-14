@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\LocalizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +23,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('GuestMiddleware');
+
+if (file_exists(app_path('Http/Controllers/LocalizationController.php')))
+{
+    Route::get('lang/{locale}', [LocalizationController::class , 'lang']);
+}
 
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile')->middleware('GuestMiddleware');
 Route::get('/profile/submit', [HomeController::class, 'profile_submit'])->name('profile_submit')->middleware('GuestMiddleware');
