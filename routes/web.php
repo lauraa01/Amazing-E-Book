@@ -30,9 +30,11 @@ if (file_exists(app_path('Http/Controllers/LocalizationController.php')))
 }
 
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile')->middleware('GuestMiddleware');
-Route::get('/profile/submit', [HomeController::class, 'profile_submit'])->name('profile_submit')->middleware('GuestMiddleware');
-Route::post('/profile', [HomeController::class, 'profile'])->name('profile')->middleware('GuestMiddleware');
 Route::post('/updateprofile', [HomeController::class, 'updateProfile'])->name('updateProfile')->middleware('GuestMiddleware');
+Route::post('/profile', [HomeController::class, 'profile'])->name('profile')->middleware('GuestMiddleware');
+Route::get('/profile/submit', [HomeController::class, 'profile_submit'])->name('profile_submit')->middleware('GuestMiddleware');
+
+Route::get('/saved', [HomeController::class, 'saved'])->name('saved')->middleware('GuestMiddleware');
 
 Route::get('bookdetail/{title}', [HomeController::class, 'bookdetail'])->name('bookdetail')->middleware('GuestMiddleware');
 Route::get('bookdetail/rent/{id}', [HomeController::class, 'rent'])->name('rent')->middleware('GuestMiddleware');

@@ -83,39 +83,46 @@ class HomeController extends Controller
         return view('profile', ['profile' => $profile]);
     }
 
+    public function saved()
+    {
+        return view('saved');
+    }
+
     public function updateProfile(Request $request)
     {
         $update = $request->validate([
-            'first_name' => ['required', 'string', 'max:25'],
-            'middle_name' => ['nullable','string','max:25'],
-            'last_name' => ['required', 'string', 'max:25'],
+            'first_name' => ['required', 'alpha', 'string', 'max:25'],
+            'middle_name' => ['nullable', 'alpha', 'string','max:25'],
+            'last_name' => ['required', 'alpha', 'string', 'max:25'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'gender_id' => ['required'],
-            'role_id' => ['required'],
-            'password' => ['required', 'string', 'min:9'],
+            'password' => ['required', 'string', 'min:9', 'regex:/^(?=.*\d).+$/'],
             'display_picture_link' => ['required', 'mimes:jpeg,png,jpg'],
         ]);
 
+        // dd($update['middle_name']);
         $image =  $update['display_picture_link'];
         $name = time() . '.' . $image->getClientOriginalExtension();;
         $location = 'images/' . $name;
         Storage::putFileAs('public/images', $image, $name);
         $update['display_picture_link'] = $location;
-
         $update['password'] = Hash::make($update['password']);
-        // dd($update);
-        AccountModel::where('id', auth()->user()->id)
+
+        AccountModel::where('account.id', auth()->user()->id)
                     ->update($update);
 
-        return view('saved');
+        return redirect('saved');
+
     }
 
     public function profile_submit() {
         $profile = AccountModel::join('role', 'account.role_id', 'role.role_id')
-        ->join('gender', 'account.gender_id', 'gender.gender_id')
-        ->where('account.id', '=', auth()->user()->id)
-        ->get();
-        return view('saved', ['profile' => $profile]);
+                                ->join('gender', 'account.gender_id', 'gender.gender_id')
+                                ->where('account.id', '=', auth()->user()->id)
+                                ->get();
+
+        // dd($profile);
+        return view('saved');
     }
 
     public function maintenance()
