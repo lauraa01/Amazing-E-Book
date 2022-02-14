@@ -1,0 +1,61 @@
+/* MASTER */
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: #afcae8;
+}
+
+.web-title{
+    margin-left: 40%;
+}
+
+footer{
+    background-color: #afcae8;
+    text-align: center;
+    padding: 2%;
+}
+
+/* INDEX */
+.opening{
+    /* padding: 2% 0; */
+    border: 10px solid #afcae8;
+    width: 35%;
+    height: 50%;
+    border-radius: 50%;
+    padding: 10%;
+    margin: 0 32%;
+}
+
+.opening-text, .to-home{
+    text-align: center;
+}
+
+/* HOME */
+.menu{
+    background-color: #fdde4a;
+    color: black;
+    padding: 2px 5px;
+}
+
+.book-list{
+    margin: 2% 10%;
+}
+
+/* SIGN UP */
+.form-control{
+    margin-left: 5%;
+}
+
+
+
+/* BOOK DETAIL */
+.detail{
+    margin: 2% 15%;
+}
+
+.book-detail{
+    width: 80%;
+    margin-bottom: 5%;
+}
